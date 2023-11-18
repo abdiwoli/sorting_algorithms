@@ -46,7 +46,7 @@ int small(int *arr, size_t size, int target)
 }
 
 /**
- * selection_sort function sorts array
+ * selection_sort - function sorts array
  * @array: the array
  * @size: the size
  */
