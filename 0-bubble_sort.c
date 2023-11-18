@@ -3,7 +3,11 @@
 #include <stdio.h>
 
 
-
+/**
+ * bubble_sort - function sorts array
+ * @arr: array of int
+ * @size: size;
+ */
 void bubble_sort(int *arr, size_t size)
 {
 	size_t i,  flag1 = 0;
