@@ -1,4 +1,5 @@
-#include <string.h>
+#include "deck.h"
+
 /**
  * sort_deck - function
  * @deck: param
