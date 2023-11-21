@@ -30,9 +30,9 @@ void my_swap(void *a, void *b, size_t size)
 
 size_t my_partition(void *array, size_t low, size_t high, size_t size, int (*compare)(const void *, const void *)) {
 	char *pivot = (char *)array + high * size;
-	size_t i = low - 1;
+	size_t i = low - 1, j;
 
-	for (size_t j = low; j < high; ++j)
+	for (j = low; j < high; ++j)
 	{
 		char *current = (char *)array + j * size;
 		if (compare(current, pivot) <= 0)
@@ -70,7 +70,7 @@ void my_qsort(void *b, size_t n, size_t size, int (*cmp)(const void *, const voi
 void sort_deck(deck_node_t **deck)
 {
 	size_t dsz = 52, i;
-	deck_node_t *deck_array[dsz];
+	deck_node_t *deck_array[52];
 	deck_node_t *current = *deck;
 
 	for (i = 0; i < dsz; ++i)
@@ -81,7 +81,7 @@ void sort_deck(deck_node_t **deck)
 
 	my_qsort(deck_array, dsz, sizeof(deck_node_t *), cmp_my_cards);
 
-	for (size_t i = 0; i < dsz - 1; ++i)
+	for (i = 0; i < dsz - 1; ++i)
 	{
 		deck_array[i]->next = deck_array[i + 1];
 		deck_array[i + 1]->prev = deck_array[i];
